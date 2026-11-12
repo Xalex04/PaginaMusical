@@ -1,0 +1,261 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #222;
+      line-height: 1.6;
+      background: #fff;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      background: url('../assets/imagen/angel.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,50,100,0.45) 0%, rgba(255,50,100,0.15) 50%, rgba(0,100,255,0.35) 100%);
+    }
+
+    .hero-title {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(3.5rem, 10vw, 8.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-align: center;
+      line-height: 1;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.15em;
+    }
+    
+    .hero-title span {
+      font-weight: 300;
+      opacity: 0.85;
+    }
+
+    .section {
+      padding: 100px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .image-content {
+      flex: 1;
+    }
+
+    .image-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 25px;
+      letter-spacing: -0.02em;
+    }
+
+    h2 .accent {
+      color: #ff3b6b;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 35px;
+      max-width: 480px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff4d6d;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff2d5a;
+      transform: translateY(-2px);
+    }
+
+    .section.reverse .container {
+      flex-direction: row-reverse;
+    }
+
+    .banner {
+      position: relative;
+      min-height: 520px;
+      background: url('../assets/imagen/raptis.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 80px 20px;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(255,40,90,0.25) 100%);
+    }
+
+    .banner .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    .banner .text-content {
+      max-width: 520px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .banner h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .banner p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background: linear-gradient(180deg, #ff4d6d 0%, #ff6b8a 100%);
+      color: #fff;
+      padding: 70px 20px 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+      opacity: 0.95;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 992px) {
+      .container {
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+      }
+
+      .section.reverse .container {
+        flex-direction: column;
+      }
+
+      .text-content,
+      .banner .text-content {
+        max-width: 100%;
+      }
+
+      p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 70px 20px;
+      }
+
+      .hero {
+        height: 80vh;
+        min-height: 500px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
